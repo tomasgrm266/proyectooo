@@ -65,52 +65,16 @@
   <h1>Test Vocacional</h1>
 
   <form id="quiz">
-    <div class="question">
-      <h3>¿Cómo evalúas tu nivel de habilidades matemáticas?</h3>
-      <div class="options">
-        <label><input type="radio" name="matematicas" value="ciencias,tecnologia"> Muy buena</label>
-        <label><input type="radio" name="matematicas" value="ciencias,tecnologia"> Buena</label>
-        <label><input type="radio" name="matematicas" value="humanidades,artes"> Media</label>
-        <label><input type="radio" name="matematicas" value="artes,humanidades"> Mala</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <h3>¿Qué tan dispuesto estás a aprender algo nuevo?</h3>
-      <div class="options">
-        <label><input type="radio" name="aprender" value="todas"> Muy</label>
-        <label><input type="radio" name="aprender" value="ninguna"> Poco</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <h3>¿Prefieres trabajar en equipo o de manera individual?</h3>
-      <div class="options">
-        <label><input type="radio" name="trabajo" value="humanidades,deportes"> En equipo</label>
-        <label><input type="radio" name="trabajo" value="tecnologia,ciencias"> Individualmente</label>
-        <label><input type="radio" name="trabajo" value="todas"> Ambos</label>
-      </div>
-    </div>
-
-    <div class="question">
-      <h3>¿Cuáles de las siguientes habilidades crees que tienes?</h3>
-      <div class="options">
-        <label><input type="radio" name="habilidades" value="humanidades"> Comunicación</label>
-        <label><input type="radio" name="habilidades" value="artes"> Creatividad</label>
-        <label><input type="radio" name="habilidades" value="tecnologia"> Resolución de problemas</label>
-        <label><input type="radio" name="habilidades" value="deportes"> Liderazgo</label>
-        <label><input type="radio" name="habilidades" value="ciencias"> Pensamiento crítico</label>
-      </div>
-    </div>
 
     <div class="question">
       <h3>¿Cuál de las siguientes áreas te interesa más?</h3>
       <div class="options">
         <label><input type="radio" name="area" value="ciencias"> Ciencias</label>
-        <label><input type="radio" name="area" value="artes"> Artes</label>
-        <label><input type="radio" name="area" value="tecnologia"> Tecnología</label>
         <label><input type="radio" name="area" value="deportes"> Deportes</label>
+        <label><input type="radio" name="area" value="tecnologia"> Tecnología</label>
         <label><input type="radio" name="area" value="humanidades"> Humanidades</label>
+        <label><input type="radio" name="area" value="economia"> Economía</label>
+        <label><input type="radio" name="area" value="artes"> Artes</label>
       </div>
     </div>
 
@@ -125,6 +89,90 @@
       </div>
     </div>
 
+    <div class="question">
+      <h3>¿Cómo evalúas tu nivel de habilidades matemáticas?</h3>
+      <div class="options">
+        <label><input type="radio" name="matematicas" value="ciencias,tecnologia,economia"> Excelente</label>
+        <label><input type="radio" name="matematicas" value="ciencias,tecnologia,economia"> Muy buena</label>
+        <label><input type="radio" name="matematicas" value="ciencias,tecnologia"> Buena</label>
+        <label><input type="radio" name="matematicas" value="humanidades,artes"> Masomenos</label>
+        <label><input type="radio" name="matematicas" value="artes,humanidades"> Mala</label>
+        <label><input type="radio" name="matematicas" value="artes,humanidades"> Muy mala</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Qué tan dispuesto estás a aprender algo nuevo?</h3>
+      <div class="options">
+        <label><input type="radio" name="aprender" value="todas"> Muy</label>
+        <label><input type="radio" name="aprender" value="ciencias,tecnologia,humanidades"> Masomenos</label>
+        <label><input type="radio" name="aprender" value="artes,deportes"> Poco</label>
+        <label><input type="radio" name="aprender" value="ninguna"> Nada</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Prefieres trabajar en equipo o de manera individual?</h3>
+      <div class="options">
+        <label><input type="radio" name="trabajo" value="humanidades,deportes"> En equipo</label>
+        <label><input type="radio" name="trabajo" value="tecnologia,ciencias"> Individualmente</label>
+        <label><input type="radio" name="trabajo" value="todas"> Ambos</label>
+        <label><input type="radio" name="trabajo" value="ninguna"> No sé</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Cuáles de las siguientes habilidades crees que tienes?</h3>
+      <div class="options">
+        <label><input type="checkbox" name="habilidades" value="humanidades"> Comunicación</label>
+        <label><input type="checkbox" name="habilidades" value="artes"> Creatividad</label>
+        <label><input type="checkbox" name="habilidades" value="tecnologia"> Resolución de problemas</label>
+        <label><input type="checkbox" name="habilidades" value="deportes"> Liderazgo</label>
+        <label><input type="checkbox" name="habilidades" value="ciencias"> Pensamiento crítico</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Te gustaría trabajar en un entorno de oficina o al aire libre?</h3>
+      <div class="options">
+        <label><input type="radio" name="entorno" value="economia,tecnologia"> Oficina</label>
+        <label><input type="radio" name="entorno" value="deportes,ciencias"> Aire libre</label>
+        <label><input type="radio" name="entorno" value="todas"> Ambos</label>
+        <label><input type="radio" name="entorno" value="ninguna"> Me da igual</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Qué tan importante es para vos ayudar a los demás en tu trabajo?</h3>
+      <div class="options">
+        <label><input type="radio" name="ayuda" value="humanidades,ciencias,deportes"> Mucho</label>
+        <label><input type="radio" name="ayuda" value="humanidades,artes"> Masomenos</label>
+        <label><input type="radio" name="ayuda" value="tecnologia,economia"> Poco</label>
+        <label><input type="radio" name="ayuda" value="ninguna"> Nada</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Prefieres realizar actividades prácticas o teóricas?</h3>
+      <div class="options">
+        <label><input type="radio" name="tipo" value="deportes,artes,tecnologia"> Prácticas</label>
+        <label><input type="radio" name="tipo" value="ciencias,humanidades,economia"> Teóricas</label>
+        <label><input type="radio" name="tipo" value="todas"> Ambas</label>
+        <label><input type="radio" name="tipo" value="ninguna"> No tengo preferencia</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Qué materias te gustan en la escuela?</h3>
+      <div class="options">
+        <label><input type="checkbox" name="materias" value="ciencias,tecnologia,economia"> Matemática</label>
+        <label><input type="checkbox" name="materias" value="ciencias"> Ciencias Biológicas</label>
+        <label><input type="checkbox" name="materias" value="humanidades"> Literatura</label>
+        <label><input type="checkbox" name="materias" value="humanidades"> Historia</label>
+        <label><input type="checkbox" name="materias" value="artes"> Arte</label>
+      </div>
+    </div>
+
     <button type="button" onclick="calculateResult()">Ver resultado</button>
   </form>
 
@@ -136,15 +184,16 @@
       artes: ["Diseño Gráfico", "Música", "Bellas Artes", "Teatro"],
       tecnologia: ["Ingeniería en Sistemas", "Programación", "Robótica", "Ciencia de Datos"],
       humanidades: ["Psicología", "Derecho", "Filosofía", "Historia"],
-      deportes: ["Profesorado de Educación Física", "Kinesiología", "Fisioterapia", "Nutrición Deportiva"]
+      deportes: ["Profesorado de Educación Física", "Kinesiología", "Fisioterapia", "Nutrición Deportiva"],
+      economia: ["Economía", "Administración de Empresas", "Contabilidad", "Marketing"]
     };
 
     function calculateResult() {
       const form = document.forms["quiz"];
-      let scores = { ciencias:0, artes:0, tecnologia:0, humanidades:0, deportes:0 };
+      let scores = { ciencias:0, artes:0, tecnologia:0, humanidades:0, deportes:0, economia:0 };
 
       for (let element of form.elements) {
-        if (element.type === "radio" && element.checked) {
+        if ((element.type === "radio" || element.type === "checkbox") && element.checked) {
           let values = element.value.split(",");
           values.forEach(v => {
             if (v === "todas") {
