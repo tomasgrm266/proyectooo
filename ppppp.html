@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Vocacional</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2f3640;
+    }
+    .question {
+      background: #fff;
+      padding: 20px;
+      margin: 15px auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 700px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+      color: #353b48;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      background: #273c75;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #40739e;
+    }
+    #result {
+      margin-top: 30px;
+      padding: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #dcdde1;
+      border-radius: 12px;
+      display: none;
+    }
+    #result h2 {
+      margin-top: 0;
+      color: #2f3640;
+    }
+  </style>
+</head>
+<body>
+  <h1>Test Vocacional</h1>
+
+  <form id="quiz">
+    <div class="question">
+      <h3>¿Cómo evalúas tu nivel de habilidades matemáticas?</h3>
+      <div class="options">
+        <label><input type="radio" name="matematicas" value="ciencias,tecnologia"> Muy buena</label>
+        <label><input type="radio" name="matematicas" value="ciencias,tecnologia"> Buena</label>
+        <label><input type="radio" name="matematicas" value="humanidades,artes"> Media</label>
+        <label><input type="radio" name="matematicas" value="artes,humanidades"> Mala</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Qué tan dispuesto estás a aprender algo nuevo?</h3>
+      <div class="options">
+        <label><input type="radio" name="aprender" value="todas"> Muy</label>
+        <label><input type="radio" name="aprender" value="ninguna"> Poco</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Prefieres trabajar en equipo o de manera individual?</h3>
+      <div class="options">
+        <label><input type="radio" name="trabajo" value="humanidades,deportes"> En equipo</label>
+        <label><input type="radio" name="trabajo" value="tecnologia,ciencias"> Individualmente</label>
+        <label><input type="radio" name="trabajo" value="todas"> Ambos</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Cuáles de las siguientes habilidades crees que tienes?</h3>
+      <div class="options">
+        <label><input type="radio" name="habilidades" value="humanidades"> Comunicación</label>
+        <label><input type="radio" name="habilidades" value="artes"> Creatividad</label>
+        <label><input type="radio" name="habilidades" value="tecnologia"> Resolución de problemas</label>
+        <label><input type="radio" name="habilidades" value="deportes"> Liderazgo</label>
+        <label><input type="radio" name="habilidades" value="ciencias"> Pensamiento crítico</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Cuál de las siguientes áreas te interesa más?</h3>
+      <div class="options">
+        <label><input type="radio" name="area" value="ciencias"> Ciencias</label>
+        <label><input type="radio" name="area" value="artes"> Artes</label>
+        <label><input type="radio" name="area" value="tecnologia"> Tecnología</label>
+        <label><input type="radio" name="area" value="deportes"> Deportes</label>
+        <label><input type="radio" name="area" value="humanidades"> Humanidades</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>¿Qué actividades disfrutas hacer en tu tiempo libre?</h3>
+      <div class="options">
+        <label><input type="radio" name="tiempo" value="humanidades"> Leer</label>
+        <label><input type="radio" name="tiempo" value="deportes"> Hacer ejercicio</label>
+        <label><input type="radio" name="tiempo" value="artes"> Dibujar</label>
+        <label><input type="radio" name="tiempo" value="artes"> Hacer música</label>
+        <label><input type="radio" name="tiempo" value="tecnologia"> Jugar videojuegos</label>
+      </div>
+    </div>
+
+    <button type="button" onclick="calculateResult()">Ver resultado</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const carreras = {
+      ciencias: ["Medicina", "Biología", "Ingeniería Química", "Física", "Matemática"],
+      artes: ["Diseño Gráfico", "Música", "Bellas Artes", "Teatro"],
+      tecnologia: ["Ingeniería en Sistemas", "Programación", "Robótica", "Ciencia de Datos"],
+      humanidades: ["Psicología", "Derecho", "Filosofía", "Historia"],
+      deportes: ["Profesorado de Educación Física", "Kinesiología", "Fisioterapia", "Nutrición Deportiva"]
+    };
+
+    function calculateResult() {
+      const form = document.forms["quiz"];
+      let scores = { ciencias:0, artes:0, tecnologia:0, humanidades:0, deportes:0 };
+
+      for (let element of form.elements) {
+        if (element.type === "radio" && element.checked) {
+          let values = element.value.split(",");
+          values.forEach(v => {
+            if (v === "todas") {
+              for (let key in scores) scores[key]++;
+            } else if (scores[v] !== undefined) {
+              scores[v]++;
+            }
+          });
+        }
+      }
+
+      // determinar el área con mayor puntaje
+      let area = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+      let resultDiv = document.getElementById("result");
+      resultDiv.style.display = "block";
+      resultDiv.innerHTML = `
+        <h2>Área recomendada: ${area.charAt(0).toUpperCase() + area.slice(1)}</h2>
+        <p>Carreras sugeridas:</p>
+        <ul>${carreras[area].map(c => `<li>${c}</li>`).join("")}</ul>
+      `;
+    }
+  </script>
+</body>
+</html>
